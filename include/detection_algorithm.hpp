@@ -5,6 +5,7 @@
 #include "utils/buffers.hpp"
 #include <boost/thread.hpp>
 #include <atomic>
+#include "utils/detection_visualizer.hpp"
 #include <chrono>
 #include <thread>
 #include "markers.hpp"
@@ -16,6 +17,7 @@ public:
 
     void start();
     Buffers buffers;
+    void setDetectionVisualizer(DetectionVisualizer *viz){visualizer = viz;}
 
 private:
     std::shared_ptr<Logger> logger_ptr;
@@ -25,6 +27,7 @@ private:
     [[noreturn]] void runtimeLoop();
 
     cv::Mat img;
+    DetectionVisualizer *visualizer = nullptr;
 
     std::shared_ptr<Deque> new_detection_deque = nullptr;
     std::shared_ptr<Deque> initial_tracking_buffer_deque = nullptr;

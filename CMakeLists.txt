@@ -33,7 +33,7 @@ add_executable(active_markers main.cpp
         src/utils/visualization.cpp
         include/utils/visualization.hpp
         src/utils/buffers.cpp
-        include/utils/buffers.hpp src/markers.cpp include/markers.hpp src/runtime_manager.cpp include/runtime_manager.hpp src/detection_algorithm.cpp include/detection_algorithm.hpp include/utils/csvfile.h src/tracker.cpp include/tracker.hpp include/external/concurrentqueue.h src/logger_no_ros.cpp include/logger.hpp)
+        include/utils/buffers.hpp src/markers.cpp include/markers.hpp src/runtime_manager.cpp include/runtime_manager.hpp src/detection_algorithm.cpp include/detection_algorithm.hpp include/utils/csvfile.h src/tracker.cpp include/tracker.hpp include/external/concurrentqueue.h src/logger_no_ros.cpp include/logger.hpp src/utils/detection_visualizer.cpp include/utils/detection_visualizer.hpp)
 
 target_include_directories(active_markers SYSTEM PUBLIC ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIR})
 target_link_libraries( active_markers

@@ -6,7 +6,9 @@
 #include "markers.hpp"
 #include "detection_algorithm.hpp"
 #include "camera.hpp"
+#include "utils/detection_visualizer.hpp"
 #include <thread>
+#include <memory>
 #include "logger.hpp"
 #include "utils/options.hpp"
 
@@ -17,6 +19,7 @@ public:
     MarkersManager* markers;
 
     DetectionAlgorithm* detector;
+    std::unique_ptr<DetectionVisualizer> detect_vis;
 
     std::shared_ptr<Logger> logger;
 

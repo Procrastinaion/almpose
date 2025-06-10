@@ -1,3 +1,4 @@
+#include "utils/detection_visualizer.hpp"
 #include "../include/detection_algorithm.hpp"
 
 DetectionAlgorithm::DetectionAlgorithm(int width, int height, MarkersManager *markers, std::shared_ptr<Logger> logger) {
@@ -88,6 +89,9 @@ void DetectionAlgorithm::detectMarkers(std::shared_ptr<Deque> deque){
                     else{
                         frequencies.push_back(double(0.0));
                     }
+                }
+                if (visualizer) {
+                    visualizer->display(histogram_with_threshold, filtered_contours, frequencies);
                 }
                 assigned_contours = filtered_contours;
                 assigned_frequencies = frequencies;
